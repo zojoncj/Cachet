@@ -78,7 +78,7 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan app:update",
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache"
@@ -88,6 +88,7 @@
             "php artisan optimize --force",
             "php artisan config:cache",
             "php artisan route:cache"
+		
         ]
     },
     "config": {

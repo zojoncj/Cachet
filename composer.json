@@ -78,7 +78,7 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "php artisan app:update",
+            "php artisan app:update"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",

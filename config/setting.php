@@ -35,6 +35,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Suppress notifications while in maintenance
+    |--------------------------------------------------------------------------
+    |
+    | Whether to suppress notification channels if an issue is created during
+    | planned or in-progress maintenance periods.
+    |
+    */
+
+    'suppress_notifications_in_maintenance' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | Automatic Localization
     |--------------------------------------------------------------------------
     |
@@ -88,4 +100,15 @@ return [
     */
 
     'skip_subscriber_verification' => false,
+
+   /*
+    |--------------------------------------------------------------------------
+    | Only disrupted days
+    |--------------------------------------------------------------------------
+    |
+    | Whether to only show days with incidents, or each day in the timeline.
+    |
+    */
+
+    'only_disrupted_days' => false,
 ];

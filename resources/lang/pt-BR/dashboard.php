@@ -11,15 +11,30 @@
 
 return [
 
-    'dashboard' => 'Dashboard',
+    'dashboard'          => 'Dashboard',
+    'writeable_settings' => 'O diretório de configurações do Cachet não é gravável. Certifique-se de que<code>./bootstrap/cachet</code> é gravável pelo servidor web.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidentes &amp; Agenda',
+        'title'                    => 'Incidentes & Agendamentos',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0} Não existem incidentes, bom trabalho.|Você registrou um incidente.|Você reportou <strong>:count</strong> incidentes.',
+        'logged'                   => '{0} Não existem incidentes, bom trabalho.|[1] Você registrou um incidente.|[2,*] Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
+        'updates'                  => [
+            'title'   => 'Atualizações para o incidente :incident',
+            'count'   => '{0} Zero Atualizações|[1] Uma Atualização|[2] Duas Atualizações|[3,*] Várias Atualizações',
+            'add'     => [
+                'title'   => 'Crie uma nova atualização de incidente',
+                'success' => 'Seu novo incidente foi criado.',
+                'failure' => 'Algo deu errado com a atualização do incidente.',
+            ],
+            'edit' => [
+                'title'   => 'Editar atualização do incidente',
+                'success' => 'O incidente foi atualizado.',
+                'failure' => 'Algo deu errado ao atualizar o incidente',
+            ],
+        ],
         'add'                      => [
             'title'   => 'Relatar um incidente',
             'success' => 'Incidente adicionado.',
@@ -58,12 +73,12 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Manutenção Agendada',
-        'logged'       => '{0} Não existem agendamentos, bom trabalho.|Você introduziu um agendamento.|Você reportou <strong>:count</strong> agendamentos.',
+        'schedule'     => 'Manutenção',
+        'logged'       => '{0} Não existem agendamentos, bom trabalho.|[1] Você introduziu um agendamento.|[2,*] Você reportou <strong>:count</strong> agendamentos.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
             'title'   => 'Adicionar manutenção programada',
-            'success' => 'Programação adicionada.',
+            'success' => 'Agendamento adicionado.',
             'failure' => 'Ocorreu um problema ao adicionar a programação, por favor tente novamente.',
         ],
         'edit' => [
@@ -105,12 +120,12 @@ return [
             'add'           => [
                 'title'   => 'Adicionar um grupo de componentes',
                 'success' => 'Grupo de componentes adicionado.',
-                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
+                'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
             ],
             'edit' => [
                 'title'   => 'Editar um grupo de componentes',
                 'success' => 'Grupo de componentes atualizado.',
-                'failure' => 'Algo deu errado com o grupo de componentes, por favor tente novamente.',
+                'failure' => 'Algo deu errado com o componente, por favor tente novamente.',
             ],
             'delete' => [
                 'success' => 'O grupo de componentes foi excluído!',
@@ -140,13 +155,15 @@ return [
     ],
     // Subscribers
     'subscribers' => [
-        'subscribers'      => 'Assinantes',
-        'description'      => 'Assinantes vão receber atualizações de e-mail quando incidentes criados ou componentes atualizados.',
-        'verified'         => 'Verificado',
-        'not_verified'     => 'Não verificado',
-        'subscriber'       => ':email, inscreveu-se em :date',
-        'no_subscriptions' => 'Inscrito em todas as atualizações',
-        'add'              => [
+        'subscribers'          => 'Assinantes',
+        'description'          => 'Assinantes vão receber atualizações de e-mail quando incidentes criados ou componentes atualizados.',
+        'description_disabled' => 'Para utilizar esse recurso, você precisa permitir que as pessoas se cadastrem para notificações.',
+        'verified'             => 'Verificado',
+        'not_verified'         => 'Não verificado',
+        'subscriber'           => ':email, inscreveu-se em :date',
+        'no_subscriptions'     => 'Inscrito em todas as atualizações',
+        'global'               => 'Inscrito globalmente',
+        'add'                  => [
             'title'   => 'Adicionar um novo assinante',
             'success' => 'Inscrito adicionado.',
             'failure' => 'Algo deu errado adicionando o assinante, por favor tente novamente.',
@@ -197,6 +214,9 @@ return [
         'analytics' => [
             'analytics' => 'Estatísticas',
         ],
+        'log' => [
+            'log' => 'Log',
+        ],
         'localization' => [
             'localization' => 'Idioma',
         ],
@@ -204,6 +224,14 @@ return [
             'customization' => 'Personalização',
             'header'        => 'HTML de cabeçalho personalizado',
             'footer'        => 'HTML de rodapé personalizado',
+        ],
+        'mail' => [
+            'mail'  => 'E-Mail',
+            'test'  => 'Teste',
+            'email' => [
+                'subject' => 'Notificação de teste do Cachet',
+                'body'    => 'Esta é uma notificação de teste do Cachet.',
+            ],
         ],
         'security' => [
             'security'   => 'Segurança',
